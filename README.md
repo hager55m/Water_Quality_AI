@@ -1,39 +1,42 @@
 Project Overview
-Clean, safe drinking water is super important for health and development! 🌍💧 This project is all about predicting if water samples are potable (safe to drink) or not, using various physical and chemical properties. We’re diving into different machine learning models to figure out whether your water is ready for a sip or needs some more testing. 🧪📊
+Access to clean, safe drinking water is crucial for health and development. This project focuses on predicting the potability (safety for drinking) of water samples by analyzing their physical and chemical properties. We applied various machine learning models to determine whether the water is safe for consumption or requires further testing.
 
 Objective
-We want to build a trusty classification model that can tell if water samples are safe to drink based on their features. We’ll use data preprocessing, exploratory data analysis (EDA), feature engineering, and machine learning algorithms to get the best results. 🏆💡
+The goal is to build a reliable classification model that can predict whether water samples are potable based on their features. We utilize data preprocessing, exploratory data analysis (EDA), feature engineering, and machine learning algorithms to achieve optimal results.
 
 Project Structure
-1. Data Preprocessing 🛠️
-Handling Duplicates: Double-checked and made sure there are no duplicate rows.
-Missing Values: Filled in missing values for ph, Sulfate, and Trihalomethanes with mean and median values.
-Outlier Detection and Handling: Found outliers, visualized them with box plots, and transformed those tricky features.
-Feature Scaling: Scaled features like Conductivity, Solids, and Hardness using MinMaxScaler to help the models work better.
-Correlation Analysis: Made a cool correlation heatmap to see how features relate to each other.
-2. Class Imbalance ⚖️
-Our dataset had more non-potable samples, so we used SMOTE (Synthetic Minority Over-sampling Technique) to balance things out.
-3. Modeling 🤖
-We tried out and compared several machine learning models:
+Data Preprocessing
 
-K-Nearest Neighbors (KNN): Tuned with GridSearchCV and checked accuracy, precision, recall, and F1-score.
-Decision Tree: Adjusted parameters like min_samples_split and max_depth for better results.
-Random Forest: Fine-tuned n_estimators, min_samples_split, and max_depth to boost accuracy.
-Other Models: Also gave Logistic Regression and SVM (Support Vector Machine) a spin.
-4. Evaluation 📈
-We checked out models based on accuracy, precision, recall, F1-score, and confusion matrices.
-Used cross-validation to make sure our models were solid and not overfitting.
-Best Model: KNN with n_neighbors = 23 was the champ based on cross-validation and overall performance.
+Handling Duplicates: Ensured no duplicate rows in the dataset.
+Missing Values: Imputed missing values for pH, Sulfate, and Trihalomethanes using mean and median values.
+Outlier Detection and Handling: Identified outliers using box plots and transformed the affected features.
+Feature Scaling: Applied MinMaxScaler to features such as Conductivity, Solids, and Hardness to improve model performance.
+Correlation Analysis: Created a correlation heatmap to analyze relationships between features.
+Class Imbalance
+
+Addressed the imbalance in potable vs. non-potable samples using SMOTE (Synthetic Minority Over-sampling Technique) to ensure balanced model training.
+Modeling
+Several machine learning models were trained and tuned, including:
+
+K-Nearest Neighbors (KNN): Tuned using GridSearchCV and evaluated with accuracy, precision, recall, and F1-score.
+Decision Tree: Optimized using parameters such as min_samples_split and max_depth.
+Random Forest: Fine-tuned with n_estimators, min_samples_split, and max_depth to maximize accuracy.
+Other Models: Also experimented with Logistic Regression and Support Vector Machine (SVM).
+Evaluation
+
+Models were evaluated based on accuracy, precision, recall, F1-score, and confusion matrices.
+Cross-validation was used to ensure robust model performance and avoid overfitting.
+Best Model: KNN with n_neighbors = 23 emerged as the best-performing model based on cross-validation and overall metrics.
 Dataset
-The dataset is publicly available and includes:
+The dataset used for the project is publicly available and contains the following features:
 
 pH: pH level of the water (0 to 14).
-Hardness: How hard the water is, measured in mg/L.
-Solids: Total dissolved solids in ppm.
-Chloramines: Amount of chloramines in ppm.
-Sulfate: Amount of sulfates in mg/L.
-Conductivity: Electrical conductivity in μS/cm.
-Organic Carbon: Amount of organic carbon in ppm.
-Trihalomethanes: Amount of Trihalomethanes in μg/L.
-Turbidity: How clear the water is, measured in NTU.
-Potability: Whether the water is potable (1) or not (0).
+Hardness: Hardness of the water (mg/L).
+Solids: Total dissolved solids in parts per million (ppm).
+Chloramines: Concentration of chloramines (ppm).
+Sulfate: Sulfate concentration (mg/L).
+Conductivity: Electrical conductivity (μS/cm).
+Organic Carbon: Organic carbon concentration (ppm).
+Trihalomethanes: Trihalomethanes concentration (μg/L).
+Turbidity: Water clarity measured in NTU.
+Potability: Indicator of whether the water is potable (1 = potable, 0 = non-potable).
